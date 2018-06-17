@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SoftUni Blog</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script type= "text/javascript" src="/javascripts/jquery-3.3.1.js"></script>
+    <script src="/javascripts/bootstrap.js"></script>
+</head>
+<body>
+<header>
+    <div class="navbar navbar-default navbar-fixed-top text-uppercase">
+        <div class="container">
+            <div class="navbar-header">
+                <a href="/" class="navbar-brand">SoftUni Blog</a>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            {{#if user}}
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/user/details">Welcome({{user.fullName}})</a></li>
+                        <li><a href="/article/create">New Article</a></li>
+                        <li><a href="/user/logout">Logout</a></li>
+                    </ul>
+                </div>
+            {{/if}}
+            {{#unless user}}
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/user/register">Register</a></li>
+                        <li><a href="/user/login">Login</a></li>
+                    </ul>
+                </div>
+            {{/unless}}
+        </div>
+    </div>
+</header>
+{{{body}}}
+</body>
+<main>
+    <div>
+        <h3 style="margin: 20px">Практическо програмиране</h3>
+        <div class=" container" style="background-color: #baccfc; margin: 10.5px">
+            <p>Софтуерен университет предлага цялостна програма по софтуерно инженерство с най-търсените софтуерни технологии, както и най-модерните учебни практики.
+                Учебният план на Софтуерен университет е внимателно разработен с прякото участие на компаниите от IT сектора.
+                Той представлява прецизна селекция от курсове по програмиране,
+                отговарящи на най-актуалните тенденции в света на информационните технологии и софтуерното инженерство.
+                C#Java
+                PHP Java
+            </p>
+        </div>
+
+        <h3 style="margin: 20px">Упражнения и проекти</h3>
+        <div class="container" style="background-color: #baccfc; margin: 10.5px">
+            <p>
+                Практическото обучение e съчетано с разнообразни лабораторни упражнения,
+                както и индивидуални и екипни практически проекти, чрез които студентите придобиват
+                както технически така и личностни умения, които ще прилагат в своята бъдеща работа като специалисти.
+            </p>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="container modal-footer">
+        <p>&copy; 2018 - Software University Foundation</p>
+    </div>
+</footer>
+</html>
